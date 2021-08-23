@@ -76,6 +76,31 @@
         </ul>
     </div>
 
+     <!-- 装修预约 -->
+     <!-- 全屋装修 -->
+    <div class="book">
+        <div class="creat">
+            <span class="span">预约装修</span> 免费上门量房，设计方案满意为止
+        </div>
+       <div class="inp">
+           <p>
+               <input class="input" type="text" placeholder="小区名" name="" id="">
+           </p>
+           <p>
+               <input class="input" type="text" placeholder="手机号" name="" id="">
+           </p>
+           <p>
+               <input class="input" type="text" placeholder="建筑面积" name="" id="">
+           </p>
+           <p>
+               <button class="btn">
+                   立即申请
+               </button>
+           </p>
+       </div>
+    </div>
+
+
 
 </div>
 </template>
