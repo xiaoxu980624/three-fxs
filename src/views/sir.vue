@@ -76,6 +76,31 @@
         </ul>
     </div>
 
+    <!-- 装修预约 -->
+     <!-- 全屋装修 -->
+    <div class="book">
+        <div class="creat">
+            <span class="span">预约装修</span> 免费上门量房，设计方案满意为止
+        </div>
+       <div class="inp">
+           <p>
+               <input class="input" type="text" placeholder="小区名" name="" id="">
+           </p>
+           <p>
+               <input class="input" type="text" placeholder="手机号" name="" id="">
+           </p>
+           <p>
+               <input class="input" type="text" placeholder="建筑面积" name="" id="">
+           </p>
+           <p>
+               <button class="btn">
+                   立即申请
+               </button>
+           </p>
+       </div>
+    </div>
+
+    <!-- 设计师 -->
 
 </div>
 </template>
@@ -139,10 +164,59 @@ export default {
 </script> 
 
 <style scoped lang='scss'>
+//预约装修
+.book{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 18px;
+    .creat{
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 18px;
+        color: #999;
+        .span{
+            font-size: 26px !important;
+            color: #000;
+            margin-right: 10px;
+            &:before{
+                content: "|";
+                font-weight:700;
+                color: #2bb281;
+                 font-size: 28px;
+                 margin-right: 5px;
+            }
+
+        }
+    }
+    .inp{
+        width: 100%;
+        text-align: center;
+        .input{
+            width: 310px;
+            height: 35px;
+            font-size: 18px;
+            color: #cacaca;
+            line-height: 35px;
+            border: 1px solid #eaeaea;
+            border-radius: 5px;
+        }
+        .btn{
+            margin-bottom: 18px;
+            color: #fff;
+             width: 310px;
+            height: 45px;
+            background: #feb505;
+            border-radius: 5px;
+            border: 0px;
+        }
+    }
+}
 //全屋装修
 .all{
     width: 100%;
     background: #fff;
+    margin-bottom: 18px;
     .creat{
         width: 100%;
         height: 64px;
@@ -171,8 +245,7 @@ export default {
         justify-content: space-around;
         li{
             margin-right: 20px;
-            height: 70px;
-             font-size: 16px;
+            height: 40px;
             .iconfont{
                 display: inline-block;
                font-size: 24px;
