@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 //axios依赖的配置
 import  axios  from "@/utils/request";
 Vue.prototype.$axios = axios;
+axios.defaults.baseURL = '/apis'
 
 //配置elmentUI组件库
 import ElementUI from 'element-ui';

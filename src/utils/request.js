@@ -3,8 +3,19 @@ import axios from "axios";
 
 //2. 创建axios对象信息
 const Server = axios.create({
-    baseURL:"",
+    baseURL:"http://m.sirfang.com/api/home",
     timeout:5000,
+    devServer: {
+        proxy: {
+            '/api': {
+                target: 'http://localhost:8000',
+                changeOrigin: true,
+                pathRewrite: {
+                    '/api': ''
+                }
+            }
+        }
+    }
 })
 
 //3. 定义请求拦截器的前置拦截器，token值。。。
