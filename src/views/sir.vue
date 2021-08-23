@@ -76,8 +76,7 @@
         </ul>
     </div>
 
-    <!-- 装修预约 -->
-     <!-- 全屋装修 -->
+     <!-- 装修预约 -->
     <div class="book">
         <div class="creat">
             <span class="span">预约装修</span> 免费上门量房，设计方案满意为止
@@ -101,6 +100,25 @@
     </div>
 
     <!-- 设计师 -->
+     <div class="set">
+        <div class="creat">
+            <span class="span">设计师</span>
+        </div>
+        <div class="man">
+          <ul>
+            <li v-for="(item,index) in list" :key="index">
+              <img  :src="item.img" alt="">
+              <p>{{item.name}}</p>
+              <span class="tag">{{item.level_name}}</span>
+            </li>
+          </ul>
+          <div class="bot">
+            <p>换一换</p>
+            <p>更多设计师</p>
+          </div>
+        </div>
+    </div>
+
 
 </div>
 </template>
@@ -154,12 +172,21 @@ export default {
           icon: "iconfont icon-ten"
         }
       ],
+      list:[]
     };
   },
 
-  methods: {},
+  methods: {
+   async getList(){
+      let res=await this.$axios.get("/shejishi")
+      console.log(res);
+      // this.list=res.list
+    }
+  },
 
-  mounted() {}
+  mounted() {
+    this.getList()
+  }
 };
 </script> 
 
@@ -210,6 +237,74 @@ export default {
             border-radius: 5px;
             border: 0px;
         }
+      width: 100%;
+      text-align: center;
+      .input{
+        width: 310px;
+        height: 35px;
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+        font-size: 20px;
+        color: #cacaca;
+      }
+      .btn{
+          width: 310px;
+          height: 40px;
+          border-radius: 5px;
+          background: #feb505;
+          color: #fff;
+          border: 0px;
+          margin-bottom: 18px;
+        }
+    }
+}
+//设计师
+.set{
+    width: 100%;
+    background: #fff;
+    .creat{
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 18px;
+        color: #999;
+        .span{
+            font-size: 26px !important;
+            color: #000;
+            margin-right: 10px;
+            &:before{
+                content: "|";
+                font-weight:700;
+                color: #2bb281;
+                 font-size: 28px;
+                 margin-right: 5px;
+            }
+
+        }
+    }
+    //
+    .man{
+      width: 100%;
+      ul{
+        width: 100%;
+        display: flex;
+        height: 220px;
+        li{
+          font-size: 22px;
+          img{
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+          }
+          .tag{
+            width: 120px;
+            height: 30px;
+            background: #2bb281;
+            color: #fff;
+
+          }
+        }
+      }
     }
 }
 //全屋装修
