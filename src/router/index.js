@@ -23,6 +23,11 @@ export default new Router({
       path: '/sir',
       name: 'sir',
       component: () => import('@/views/sir.vue')
+    },
+    {
+      path: '/gdzx',
+      name: 'sir',
+      component: () => import('@/views/gdzx.vue')
     }
   ]
 })
