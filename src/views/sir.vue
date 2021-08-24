@@ -98,27 +98,6 @@
            </p>
        </div>
     </div>
-
-    <!-- 设计师 -->
-     <div class="set">
-        <div class="creat">
-            <span class="span">设计师</span>
-        </div>
-        <div class="man">
-          <ul>
-            <li v-for="(item,index) in list" :key="index">
-              <img  :src="item.img" alt="">
-              <p>{{item.name}}</p>
-              <span class="tag">{{item.level_name}}</span>
-            </li>
-          </ul>
-          <div class="bot">
-            <p>换一换</p>
-            <p>更多设计师</p>
-          </div>
-        </div>
-    </div>
-
   <!-- 设计师 -->
      <div class="set">
         <div class="creat">
