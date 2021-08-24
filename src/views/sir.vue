@@ -119,7 +119,67 @@
         </div>
     </div>
 
+  <!-- 设计师 -->
+     <div class="set">
+        <div class="creat">
+            <span class="span">设计师</span>
+        </div>
+        <div class="man">
+          <ul>
+            <li v-for="(item,index) in man" :key="index">
+              <img class="img"  :src="item.img" alt="">
+              <p>{{item.name}}</p>
+              <span class="tag">{{item.level_name}}</span>
+            </li>
+          </ul>
+         
+        </div>
+         <div class="bot">
+            <p>换一换  <i class="iconfont icon-change"></i> </p>
+            <p>更多设计师  <i class="iconfont icon-more"></i></p>
+          </div>
+    </div>
 
+    <!-- 效果图 -->
+     <div class="res">
+        <div class="creat">
+            <span class="span">效果图</span>
+        </div>
+        <div class="heng">
+          <img :src="res[0].img" alt="">
+          <p class="title">{{res[0].title}}</p>
+        </div>
+        <ul>
+          <li v-for="(item,index) in result" :key="index"> 
+            <img :src="item.img" alt="">
+            <p class="title">{{item.title}}</p>
+          </li>
+        </ul>
+         <div class="bot">
+            <p>换一换  <i class="iconfont icon-change"></i> </p>
+            <p>更多效果图  <i class="iconfont icon-more"></i></p>
+          </div>
+     </div>
+
+     <!-- 工地直播 -->
+     <div class="size">
+        <div class="creat">
+            <span class="span">工地直播</span>
+        </div>
+        <div class="house" >
+          <img :src="size[0].img" alt="">
+          <p class="p">
+            {{size[0].title}}
+            <span>{{size[0].now_stage}}</span>
+          </p>
+        </div>
+        <div class="bot">
+            <p>换一换  <i class="iconfont icon-change"></i> </p>
+            <p>更多工地直播  <i class="iconfont icon-more"></i></p>
+          </div>
+     </div>
+
+     <!-- 装修攻略 -->
 </div>
 </template>
 
