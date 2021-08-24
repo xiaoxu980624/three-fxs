@@ -185,7 +185,9 @@
 
 <script>
 import "@/assets/iconfont/iconfont.css";
-
+import size from "@/assets/size.json"; //工地
+import res from "@/assets/res.json";
+import main from "@/assets/res.json"
 export default {
   components: {},
   data() {
@@ -232,16 +234,17 @@ export default {
           icon: "iconfont icon-ten"
         }
       ],
+      res:res.data.list,
+      size:size.data.list,
+      result:[],
       list:[]
     };
   },
 
   methods: {
-   async getList(){
-      let res=await this.$axios.get("/shejishi")
-      console.log(res);
-      // this.list=res.list
-    }
+     getList(){
+       this.result=this.res.splice(1,4)
+     }
   },
 
   mounted() {
