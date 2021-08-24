@@ -686,6 +686,7 @@ export default {
     flex-direction: row;
     justify-content: space-around;
     li {
+      font-size: 14px;
       margin-right: 20px;
       height: 40px;
       .iconfont {
