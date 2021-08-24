@@ -185,13 +185,19 @@
 
 <script>
 import "@/assets/iconfont/iconfont.css";
-import size from "@/assets/size.json"; //工地
-import res from "@/assets/res.json";
-import main from "@/assets/res.json"
+import man from "@/assets/main.json";   //设计师
+import res from "@/assets/res.json";   //效果图
+import size from "@/assets/size.json"; //工地直播
+console.log(size.data.list);
 export default {
   components: {},
   data() {
     return {
+      //设计师
+      man: man.data.list,
+      res: res.data.list,
+      size:size.data.list,
+      result:[],
       grid: [
         {
           title: "装修方案",
@@ -227,24 +233,22 @@ export default {
           title: "免费预约",
           icon: "iconfont icon-pencle",
           color: "#ff4351"
-        } ,
+        },
         {
           title: "十秒报价",
           color: "#fe8864",
           icon: "iconfont icon-ten"
         }
       ],
-      res:res.data.list,
-      size:size.data.list,
-      result:[],
-      list:[]
+      list: []
     };
   },
 
   methods: {
-     getList(){
-       this.result=this.res.splice(1,4)
-     }
+    getList(){
+      this.result=this.res.splice(1,4)
+      console.log(this.result);
+    }
   },
 
   mounted() {
@@ -254,153 +258,345 @@ export default {
 </script> 
 
 <style scoped lang='scss'>
-//预约装修
-.book{
+//工地直播
+.size{
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+   .creat {
     width: 100%;
-    background: #fff;
-    .creat{
-        width: 100%;
-        height: 64px;
-        line-height: 64px;
-        font-size: 18px;
-        color: #999;
-        .span{
-            font-size: 26px !important;
-            color: #000;
-            margin-right: 10px;
-            &:before{
-                content: "|";
-                font-weight:700;
-                color: #2bb281;
-                 font-size: 28px;
-                 margin-right: 5px;
-            }
-
-        }
-    }
-    .inp{
-      width: 100%;
-      text-align: center;
-      .input{
-        width: 310px;
-        height: 35px;
-        border: 1px solid #eaeaea;
-        border-radius: 5px;
-        font-size: 20px;
-        color: #cacaca;
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
       }
-      .btn{
-          width: 310px;
-          height: 40px;
-          border-radius: 5px;
-          background: #feb505;
-          color: #fff;
-          border: 0px;
-          margin-bottom: 18px;
-        }
     }
+  }
+  .house{
+    width: 100%;
+    height: 295px;
+    img{
+      width: 100%;
+     height: 250px;
+    }
+    .p{
+      width: 100%;
+      height: 35px;
+      font-size: 22px;
+      span{
+        display: inline-block;
+        background: #2bb281;
+        padding:3px;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+  }
+   .bot {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+
+    font-size: 24px;
+    p {
+      width: 45%;
+      line-height: 50px;
+      border: 1px solid #ccc;
+      text-align: center;
+      color: #2bb281;
+      font-size: 24px;
+    }
+  }
+}
+//预约装修
+.book {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .creat {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .inp {
+    width: 100%;
+    text-align: center;
+    .input {
+      width: 310px;
+      height: 35px;
+      font-size: 18px;
+      color: #cacaca;
+      line-height: 35px;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+    }
+    .btn {
+      margin-bottom: 18px;
+      color: #fff;
+      width: 310px;
+      height: 45px;
+      background: #feb505;
+      border-radius: 5px;
+      border: 0px;
+    }
+    width: 100%;
+    text-align: center;
+    .input {
+      width: 310px;
+      height: 35px;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      font-size: 20px;
+      color: #cacaca;
+    }
+    .btn {
+      width: 310px;
+      height: 40px;
+      border-radius: 5px;
+      background: #feb505;
+      color: #fff;
+      border: 0px;
+      margin-bottom: 18px;
+    }
+  }
 }
 //设计师
-.set{
+.set {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .creat {
     width: 100%;
-    background: #fff;
-    .creat{
-        width: 100%;
-        height: 64px;
-        line-height: 64px;
-        font-size: 18px;
-        color: #999;
-        .span{
-            font-size: 26px !important;
-            color: #000;
-            margin-right: 10px;
-            &:before{
-                content: "|";
-                font-weight:700;
-                color: #2bb281;
-                 font-size: 28px;
-                 margin-right: 5px;
-            }
-
-        }
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
+      }
     }
-    //
-    .man{
-      width: 100%;
-      ul{
-        width: 100%;
-        display: flex;
-        height: 220px;
-        li{
-          font-size: 22px;
-          img{
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-          }
-          .tag{
-            width: 120px;
-            height: 30px;
-            background: #2bb281;
-            color: #fff;
-
-          }
+  }
+  //
+  .man {
+    width: 100%;
+    overflow-x: scroll;
+    padding: 5px;
+    box-sizing: border-box;
+    ul {
+      width: 130%;
+      display: flex;
+      height: 220px;
+      li {
+        font-size: 22px;
+        margin-right: 10px;
+        text-align: center;
+        img {
+          width: 90px;
+          height: 90px;
+          border-radius: 50%;
+          margin-bottom: 12px;
+        }
+        .tag {
+          width: 100px;
+          height: 30px;
+          line-height: 30px;
+          border-radius: 5px;
+          font-size: 14px;
+          background: #2bb281;
+          color: #fff;
+          display: inline-block;
         }
       }
     }
+  }
+  .bot {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+
+    font-size: 24px;
+    p {
+      width: 45%;
+      line-height: 50px;
+      border: 1px solid #ccc;
+      text-align: center;
+      color: #2bb281;
+      font-size: 24px;
+    }
+  }
+}
+//效果图
+.res {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .creat {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .heng {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    img {
+      width: 100%;
+      height: 250px;
+    }
+    .title {
+      position: absolute;
+      bottom: -12px;
+      right: 5px;
+      background: #333333;
+      color: #fff;
+    }
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    li {
+      width: 48%;
+      height: 125px;
+      margin-bottom: 8px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        margin-top: 8px;
+      }
+      .title {
+        position: absolute;
+        bottom: -20px;
+        right: 5px;
+        background: #333333;
+        color: #fff;
+        font-size: 14px;
+      }
+    }
+  }
+  .bot {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    p {
+      width: 45%;
+      line-height: 50px;
+      border: 1px solid #ccc;
+      text-align: center;
+      color: #2bb281;
+      font-size: 24px;
+    }
+  }
 }
 //全屋装修
-.all{
+.all {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .creat {
     width: 100%;
-    background: #fff;
-    .creat{
-        width: 100%;
-        height: 64px;
-        line-height: 64px;
-        font-size: 18px;
-        color: #999;
-        .span{
-            font-size: 26px !important;
-            color: #000;
-            margin-right: 10px;
-            &:before{
-                content: "|";
-                font-weight:700;
-                color: #2bb281;
-                 font-size: 28px;
-                 margin-right: 5px;
-            }
-
-        }
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
+      }
     }
-     ul{
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-around;
-        li{
-            margin-right: 20px;
-            height: 70px;
-             font-size: 16px;
-            .iconfont{
-                display: inline-block;
-               font-size: 24px;
-                text-align: center;
-                color: #2bb281;
-                vertical-align: middle;
-            }
-        }
+  }
+  ul {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    li {
+      margin-right: 20px;
+      height: 40px;
+      .iconfont {
+        display: inline-block;
+        font-size: 24px;
+        text-align: center;
+        color: #2bb281;
+        vertical-align: middle;
+      }
     }
+  }
 }
-.banner{
+.banner {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .img {
     width: 100%;
-    background: #fff;
-    margin-bottom:18px; 
-    .img{
-        width: 100%;
-        height: 220px;
-    }
+    height: 220px;
+  }
 }
 //轮播图
 .my-swipe .van-swipe-item {
@@ -410,12 +606,14 @@ export default {
   text-align: center;
   background-color: #39a9ed;
 }
+//九宫格
 .grid {
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 18px;
+  padding-left: 10px;
   background: #fff;
   margin-bottom: 18px;
 }
@@ -428,14 +626,14 @@ export default {
   text-align: center;
   line-height: 80px;
   position: relative;
-  .i{
-      font-size: 34px;
-      color:#fff;
+  .i {
+    font-size: 34px;
+    color: #fff;
   }
-  p{
-      position: absolute;
-      top: 40px;
-      left: 10px;
+  p {
+    position: absolute;
+    top: 40px;
+    left: 10px;
   }
 }
 .img {
