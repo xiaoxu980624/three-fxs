@@ -23,6 +23,11 @@ export default new Router({
       path: '/sir',
       name: 'sir',
       component: () => import('@/views/sir.vue')
+    },
+    {
+      path: '/stylist',
+      name: 'stylist',
+      component: () => import('@/views/stylist.vue')
     }
   ]
 })
