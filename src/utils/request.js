@@ -3,25 +3,25 @@ import axios from "axios";
 
 //2. 创建axios对象信息
 const Server = axios.create({
-    baseURL:"http://m.sirfang.com/api/home",
+    baseURL:"",
     timeout:5000,
-    devServer: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:8000',
-                changeOrigin: true,
-                pathRewrite: {
-                    '/api': ''
-                }
-            }
-        }
-    }
+    // devServer: {
+    //     proxy: {
+    //         '/api': {
+    //             target: 'http://localhost:8000',
+    //             changeOrigin: true,
+    //             pathRewrite: {
+    //                 '/api': ''
+    //             }
+    //         }
+    //     }
+    // }
 })
 
 //3. 定义请求拦截器的前置拦截器，token值。。。
 Server.interceptors.request.use(function(config){
     console.log('请求拦截器',config);
-
+  
     return config;
 }, function(error){
     return Promise.reject(error)
@@ -32,6 +32,7 @@ Server.interceptors.request.use(function(config){
 //4. 定义相应拦截器， 格式化返回的数据
 Server.interceptors.response.use(function(response){
     console.log("相应拦截器:",response);
+  
     //对数据进行格式化的操作了。
     return response.data;
 }, function(error){
