@@ -99,26 +99,7 @@
        </div>
     </div>
 
-    <!-- 设计师 -->
-     <div class="set">
-        <div class="creat">
-            <span class="span">设计师</span>
-        </div>
-        <div class="man">
-          <ul>
-            <li v-for="(item,index) in list" :key="index">
-              <img  :src="item.img" alt="">
-              <p>{{item.name}}</p>
-              <span class="tag">{{item.level_name}}</span>
-            </li>
-          </ul>
-          <div class="bot">
-            <p>换一换</p>
-            <p>更多设计师</p>
-          </div>
-        </div>
-    </div>
-
+  
   <!-- 设计师 -->
      <div class="set">
         <div class="creat">
@@ -180,13 +161,46 @@
      </div>
 
      <!-- 装修攻略 -->
+       <div class="xiu">
+          <div class="creat">
+              <span class="span">装修攻略</span>
+          </div>
+          <ul>
+            <li v-for="(item,index) in zxiu" :key="index">
+              <div class="tu">
+                 <img :src="item.img" alt="">
+              </div>
+              <div class="zi">
+                 <p class="p1">{{item.title}}</p>
+                 <p class="p2">
+                    <i class="iconfont icon-time" >{{item.edit_time}}</i>  &nbsp;&nbsp;&nbsp;
+                    <i class="iconfont icon-view">{{item.view_num}}</i>    &nbsp;&nbsp;&nbsp;
+                 </p>
+              </div>
+            </li>
+          </ul>
+           <div class="bot">
+            <p>换一换  <i class="iconfont icon-change"></i> </p>
+            <p>更多装修攻略  <i class="iconfont icon-more"></i></p>
+          </div>
+       </div>
+
+       <!-- foot-tip -->
+       <div class="foot-tips">
+          
+		 房先森互联网家装有别于传统装修公司与其他装修中介平台，
+     以自营模式整合设计师与项目经理，利用互联网将工地进行在线全景直播，
+     通过去中间环节，提供装修套餐 + 个性化定制服务。
+	
+       </div>
 </div>
 </template>
 
 <script>
 import "@/assets/iconfont/iconfont.css";
-import man from "@/assets/main.json";   //设计师
-import res from "@/assets/res.json";   //效果图
+import man from "@/assets/main.json"; //设计师
+import res from "@/assets/res.json"; //效果图
+import xiu from "@/assets/xiu.json"; //装修攻略
 import size from "@/assets/size.json"; //工地直播
 console.log(size.data.list);
 export default {
@@ -196,8 +210,10 @@ export default {
       //设计师
       man: man.data.list,
       res: res.data.list,
-      size:size.data.list,
-      result:[],
+      size: size.data.list,
+      xiu: xiu.data.list,
+      result: [],
+      zxiu: [],
       grid: [
         {
           title: "装修方案",
@@ -245,25 +261,38 @@ export default {
   },
 
   methods: {
-    getList(){
-      this.result=this.res.splice(1,4)
+    getList() {
+      this.result = this.res.splice(1, 4);
       console.log(this.result);
+      this.zxiu = this.xiu.splice(2, 3);
     }
   },
 
   mounted() {
-    this.getList()
+    this.getList();
   }
 };
 </script> 
 
 <style scoped lang='scss'>
-//工地直播
-.size{
+.foot-tips {
+  width: 100%;
+  height: 120px;
+  background: #fff;
+  padding: 3%;
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.6;
+  text-indent: 1rem;
+  color: #666;
+  margin-bottom: 18px;
+}
+//装修攻略
+.xiu {
   width: 100%;
   background: #fff;
   margin-bottom: 18px;
-   .creat {
+  .creat {
     width: 100%;
     height: 64px;
     line-height: 64px;
@@ -282,28 +311,108 @@ export default {
       }
     }
   }
-  .house{
+  ul {
+    width: 100%;
+    li {
+      width: 100%;
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      .tu {
+        width: 150px;
+        height: 150px;
+        margin-right: 11px;
+        img {
+          width: 150px;
+          height: 99px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+        }
+      }
+      .zi {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .p1 {
+          width: 220px;
+          font-size: 16px;
+          color: #000;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .p2 {
+          font-size: 14px;
+          color: #999;
+        }
+      }
+    }
+  }
+  .bot {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+
+    font-size: 24px;
+    p {
+      width: 45%;
+      line-height: 50px;
+      border: 1px solid #ccc;
+      text-align: center;
+      color: #2bb281;
+      font-size: 24px;
+    }
+  }
+}
+//工地直播
+.size {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 18px;
+  .creat {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    font-size: 18px;
+    color: #999;
+    .span {
+      font-size: 26px !important;
+      color: #000;
+      margin-right: 10px;
+      &:before {
+        content: "|";
+        font-weight: 700;
+        color: #2bb281;
+        font-size: 28px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .house {
     width: 100%;
     height: 295px;
-    img{
+    img {
       width: 100%;
-     height: 250px;
+      height: 250px;
     }
-    .p{
+    .p {
       width: 100%;
       height: 35px;
       font-size: 22px;
-      span{
+      span {
         display: inline-block;
         background: #2bb281;
-        padding:3px;
+        padding: 3px;
         border-radius: 5px;
         color: #fff;
         font-size: 20px;
       }
     }
   }
-   .bot {
+  .bot {
     width: 100%;
     height: 85px;
     display: flex;
