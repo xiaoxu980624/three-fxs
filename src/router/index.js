@@ -68,9 +68,27 @@ export default new Router({
             import('@/views/picture.vue')
     },
     {
+<<<<<<< HEAD
         path: "/dev",
         component: () =>
             import('@/views/Decorate.vue')
     }
+=======
+        path: "/fangan",
+        component: () =>
+            import('@/views/fangan.vue')
+    },
+    {
+        path: '/liucheng',
+        name: 'liucheng',
+        component: () =>
+            import ('@/views/liucheng.vue')
+    },
+    {
+        path: "/ten-bj",
+        component: () =>
+            import('@/views/ten-bj.vue')
+    },
+>>>>>>> 878133e9d530f26f3af18f746001d17f203a7728
     ]
 })
