@@ -77,6 +77,11 @@ export default new Router({
         name: 'liucheng',
         component: () =>
             import ('@/views/liucheng.vue')
-    }
+    },
+    {
+        path: "/ten-bj",
+        component: () =>
+            import('@/views/ten-bj.vue')
+    },
     ]
 })
