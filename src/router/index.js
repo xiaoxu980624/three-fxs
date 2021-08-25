@@ -73,4 +73,5 @@ export default new Router({
                 import ('@/views/strategy.vue')
         }
     ]
+
 })
