@@ -39,11 +39,11 @@
         </ul>
         <div class="di-Gongges">
             <div class="Gongge" v-for="(item,index) in list" :key="index">
-                <div>
+                
                     <img class="imgs" :src="item.img" alt="">
                     <p>{{item.title}}</p>
                     <p>{{item.guige}}</p>
-                </div>
+                
             </div>
             <article class="page flex">
             <a href="" class="bg-green">上一页</a>

@@ -66,6 +66,11 @@ export default new Router({
             path: "/picture",
             component: () =>
                 import ('@/views/picture.vue')
+        },
+        {
+            path: "/strategy",
+            component: () =>
+                import ('@/views/strategy.vue')
         }
     ]
 })
