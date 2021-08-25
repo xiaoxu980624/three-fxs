@@ -133,6 +133,29 @@
             <div class="shang-b">2/30</div>
             <div class="shang-c">下一页</div>
         </div>
+        <!-- 线 -->
+        <div class="xian"></div>
+        <!-- 详细介绍 -->
+        <div class="jie">
+            <p>
+                方先森互联网家装有别于传统装修公司与其他装修中介平台，一自营迷失整合
+                设计师与项目经理，杜绝项目转包外包，利用互联网将工地进行在线全景直播，
+                通过直播间环节，提供装修套餐 + 个性化定制服务。
+            </p>
+        </div>
+
+        <!-- 线 -->
+        <div class="xian"></div>
+
+        <div class="foot">
+            <p><i class="iconfont icon-hot-line" ></i>服务热线：400-9977-658</p>
+            <ul>
+                <li style="color:#39c894">触屏版</li>
+                <li>电脑版</li>
+                <li>关于我们</li>
+                <li>联系我们</li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>
@@ -163,7 +186,7 @@ export default {
         }
         p{
             height: 100%;;
-            margin-left: 70px;
+            margin-left: 45px;
         }
         .head-r{
             height: 100%;
@@ -244,6 +267,41 @@ export default {
             text-align: center;
             line-height: 50px;
             color: white;
+        }
+    }
+    .xian{
+        width: 100%;
+        height: 5px;
+        background: #ddd;
+        margin-top: 10px
+    }
+    .jie{
+        width: 100%;
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+        box-sizing: border-box;
+        p{
+            text-indent: 2em;
+        }
+    }
+    .foot{
+        width: 100%;
+        p{
+            height: 50px;
+            margin-left: 20px;
+            text-align: center;
+            line-height: 50px;
+            i{
+                font-size: 20px;
+                color: #39c894;
+            }
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            display: flex;
+            justify-content: space-around;
         }
     }
 }
