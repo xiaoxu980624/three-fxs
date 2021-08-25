@@ -42,7 +42,9 @@ export default new Router({
             path: '/gdzx',
             name: 'sir',
             component: () =>
-                import ('@/views/gdzx.vue'),
+                import ('@/views/gdzx.vue')
+        },
+        {
             path: '/stylist',
             name: 'stylist',
             component: () =>
