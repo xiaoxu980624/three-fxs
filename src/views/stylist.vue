@@ -38,12 +38,12 @@
     <!-- 设计师列表 -->
     <div class="lists">
         <ul  >
-            <li v-for="(item,index) in 6" :key="index">
+            <li v-for="(item,index) in 10" :key="index">
                <div class="list_son">
                     <img src="@/assets/切图/a.jpg" alt="">
                     <div class="list_sons">
                     <div>
-                        <p><span>白晨</span><span>主任设计师</span></p>
+                        <p><span>黑虎阿福</span><span>成龙死对头</span></p>
                         <p><span class="on">2115</span><span>人气</span></p>
                     </div>
                     <div>
@@ -52,12 +52,16 @@
                         <p>评价：<span>0</span></p>
                     </div>
                     <div>
-                        <p><span>擅长风格</span><span>现代/欧美/美式/田园/新古代/现代/简约/法师/北欧/后现代</span></p>
+                        <span>擅长风格:</span><span>龙卷风摧毁停车场/欧美/美式/田园/新古代/现代/简约/法师/北欧/后现代</span>
                     </div>
                 </div>
                </div>
             </li>
         </ul>
+        <div class="div">
+          <span>1/3</span>
+          <button>下一页</button>
+        </div>
     </div>
     </div>    
 </template>
@@ -136,7 +140,7 @@ a {
         font-weight: normal;
         font-size: 0.4rem;
         color: #999;
-        margin-left: 0.2rem;
+        margin-left: 0.3rem;
       }
       .icon-search {
         font-size: 0.6rem;
@@ -174,8 +178,8 @@ a {
                 font-size: 18px;
               }
               :nth-child(2) {
-                 height: .4rem;
-                 padding: .1rem .2rem;
+                height: 0.4rem;
+                padding: 0.1rem 0.2rem;
                 margin-left: 0.2rem;
                 font-size: 12px;
                 border-radius: 4px;
@@ -183,41 +187,69 @@ a {
                 color: #fff;
               }
             }
-            :nth-child(2){
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                .on{
-                    color: #feb505;
-                }
-                span{
-                    margin-right: .15rem;
-                }
+            :nth-child(2) {
+              display: flex;
+              align-items: center;
+              font-size: 14px;
+              .on {
+                color: #feb505;
+              }
+              span {
+                margin-right: 0.15rem;
+              }
             }
           }
-          :nth-child(2){
+          :nth-child(2) {
+            display: flex;
+            p {
+              margin-right: 0.4rem;
+              color: #333;
               display: flex;
-              p{
-                  margin-right: .2rem;
-                  color: #333;
-                  display: flex;
-                  font-size: 14px;
-                  span{
-                      margin-left: .15rem;
-                      color: #999;
-                  }
+              font-size: 14px;
+              span {
+                margin-left: 0.15rem;
+                color: #999;
               }
+            }
+          }
+          :nth-child(3) {
+            :nth-child(1){
+              font-size: 14px;
+              color: #333;
+              margin-right: .15rem;
+            }
+            :nth-child(2){
+                  color: #999
+            }
+            span{
+              display: inline;
+            }
           }
           div {
             margin-bottom: 0.2rem;
-            display: flex;
-            p{
-                margin: 0;
-                padding: 0;
+            p {
+              margin: 0;
+              padding: 0;
             }
           }
         }
       }
+    }
+  }
+  .div{
+    display: flex;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 16px;
+    span{
+     flex: 1
+    }
+    button{
+      flex: 1;
+      background: #39c894;
+      color: #fff;
+      border: none;
     }
   }
 }
