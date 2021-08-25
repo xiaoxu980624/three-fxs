@@ -40,7 +40,9 @@
         <div class="di-Gongges">
             <div class="Gongge" v-for="(item,index) in list" :key="index">
                 <div>
-                    <img src="" alt="">
+                    <img class="imgs" :src="item.img" alt="">
+                    <p>{{item.title}}</p>
+                    <p>{{item.guige}}</p>
                 </div>
             </div>
             <article class="page flex">
@@ -68,10 +70,11 @@
 
 <script>
 import "@/assets/iconfont/iconfont.css";
+import good from "@/assets/data.json";
 export default {
   data() {
     return {
-      list: ["1", "2", "1", "1", "1", "1"]
+      list:good
     };
   },
   mounted() {},
@@ -80,6 +83,10 @@ export default {
 </script>
 
 <style scoped lang="scss" >
+.imgs{
+  width: 100%;
+  height: 100px;
+}
 .bun{
     background: white
 }
@@ -133,13 +140,17 @@ export default {
   flex-wrap: wrap;
   padding-top: 12px;
   padding-right: 12px;
+  box-sizing: border-box;
 }
 .Gongge {
-  width: 46%;
+  width: 46.1%;
   height: 170px;
-  background: red;
+  border: 1px solid #eaeaea;
   margin-left: 12px;
   margin-bottom: 12px;
+  p{
+    margin-left: 10px;
+  }
 }
 .picture-box {
   width: 100%;
