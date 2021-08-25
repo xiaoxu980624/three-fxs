@@ -3,6 +3,7 @@
          <!--头部 -->
    <div class="header">
            <a href="javascript:;" class="login"></a>
+           <span class="name">设计师</span>
       <p class="pr">
           <span>
              <i class="iconfont icon-user" ></i>
@@ -63,6 +64,24 @@
           <button>下一页</button>
         </div>
     </div>
+    <p class="foot">
+	    	房先森互联网家装有别于传统装修公司与其他装修中介平台，以自营模式整合设计师与项目经理，利用互联网将工地进行在线全景直播，通过去中间环节，提供装修套餐 + 个性化定制服务。
+	  </p>
+    <div class="botto">
+      <p><i class="iconfont icon-hot-line"></i>服务热线:17757169861</p>
+      <ul>
+        <li><a href="javascript:;">触屏版</a></li>
+        <li><a href="javascript:;">电脑版</a></li>
+        <li><a href="javascript:;">关于我们</a></li>
+        <li><a href="javascript:;">联系我们</a></li>
+      </ul>
+      <p>© 2016 <a href="javascript:;">浙ICP备15033817号-1</a></p>
+    </div>
+    <div class="bin">
+      <span><i class="iconfont icon-close"></i></span>
+      <img src="@/assets/切图/quoten_bottom.png" alt="">
+      <span>免费获取报价</span>
+    </div>
     </div>    
 </template>
 <script>
@@ -102,6 +121,9 @@ a {
     background: url(../assets/切图/logo.png) no-repeat;
     background-size: contain;
     background-position: center center;
+  }
+  .name{
+    font-size: 20px;
   }
   .pr {
     display: flex;
@@ -150,12 +172,12 @@ a {
   }
 }
 .lists {
-  padding: 1% 3% 3% 3%;
+  padding: 1% 3% 1% 3%;
   ul {
     li {
       padding: 0.3rem 0;
+       border-bottom: 1px solid #eaeaea;
       .list_son {
-        border-bottom: 1px solid #eaeaea;
         display: flex;
         align-items: center;
         img {
@@ -205,7 +227,7 @@ a {
               margin-right: 0.4rem;
               color: #333;
               display: flex;
-              font-size: 14px;
+              font-size: 0.14rem;
               span {
                 margin-left: 0.15rem;
                 color: #999;
@@ -213,15 +235,15 @@ a {
             }
           }
           :nth-child(3) {
-            :nth-child(1){
+            :nth-child(1) {
               font-size: 14px;
               color: #333;
-              margin-right: .15rem;
+              margin-right: 0.15rem;
             }
-            :nth-child(2){
-                  color: #999
+            :nth-child(2) {
+              color: #999;
             }
-            span{
+            span {
               display: inline;
             }
           }
@@ -236,21 +258,104 @@ a {
       }
     }
   }
-  .div{
+  .div {
     display: flex;
     height: 1rem;
     line-height: 1rem;
     text-align: center;
     font-size: 16px;
-    span{
-     flex: 1
+    margin-top: .2rem;
+    span {
+      flex: 1;
     }
-    button{
+    button {
       flex: 1;
       background: #39c894;
       color: #fff;
       border: none;
     }
+  }
+}
+.foot {
+  border-bottom: 0.3rem solid #eaeaea;
+  border-top: 0.3rem solid #eaeaea;
+  margin: 0;
+  text-indent: 1rem;
+  padding: 3%;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+.botto{
+   padding: 3% 3% 3% 3%;
+  p:nth-child(1){
+    text-align: center;
+    font-size: 14px;
+    i{
+      vertical-align: middle;
+          color: #2bb281;
+          margin-right: .05rem;
+    }
+  }
+   p:nth-child(3){
+    text-align: center;
+    font-size: 14px;
+    color: #ccc;
+    a{
+      color: #333;
+    }
+  }
+  ul{
+    display: flex;
+    justify-content: space-around;
+    margin: .2rem 0;
+    padding-bottom: .3rem;
+     border-bottom: 1px solid #eaeaea;
+     li{
+       font-size: 14px;
+       :hover{
+         color: #2bb281;
+       }
+     }
+  }
+  p{
+    margin: 0;
+  }
+}
+.bin{
+  position: fixed;
+  bottom: 0;left: 0;
+  background-color: rgba($color: #000000, $alpha: .7);
+  height: 1.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  :nth-child(1){
+    position: absolute;
+    top: 0;left: 0;
+    background: #2bb281;
+    color: white;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    border-radius: 0 0 150% 0;
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: .2rem;
+    font-size: 20px;
+  }
+  :nth-child(3){
+    background: #feb505;
+    color: white;
+    margin-right: .5rem;
+    padding: .05rem .1rem;
+    border-radius: .15rem;
+    font-size: 14px;
+  }
+  img{
+    width: 55%;
+    margin-left: 10%;
   }
 }
 </style>
