@@ -71,6 +71,12 @@ export default new Router({
         path: "/fangan",
         component: () =>
             import('@/views/fangan.vue')
+    },
+    {
+        path: '/liucheng',
+        name: 'liucheng',
+        component: () =>
+            import ('@/views/liucheng.vue')
     }
     ]
 })
