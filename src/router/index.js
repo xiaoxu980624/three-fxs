@@ -66,6 +66,12 @@ export default new Router({
             path: "/picture",
             component: () =>
                 import ('@/views/picture.vue')
-        }
+        },
+        {
+            path: '/liucheng',
+            name: 'liucheng',
+            component: () =>
+                import ('@/views/liucheng.vue')
+        },
     ]
 })
